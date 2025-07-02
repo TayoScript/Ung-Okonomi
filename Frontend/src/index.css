@@ -1,0 +1,80 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 146 40% 8%;  /* Dark green #122c22 */
+    --foreground: 0 0% 98%;    /* Near white text */
+
+    --card: 146 35% 12%;       /* Slightly lighter green for cards */
+    --card-foreground: 0 0% 98%;
+
+    --popover: 146 35% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 120 60% 50%;    /* Bright green for highlights */
+    --primary-foreground: 146 40% 8%;
+
+    --secondary: 146 30% 15%;  /* Medium green */
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 146 25% 20%;
+    --muted-foreground: 120 10% 70%;
+
+    --accent: 120 50% 45%;     /* Accent green */
+    --accent-foreground: 146 40% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 146 25% 25%;
+    --input: 146 25% 20%;
+    --ring: 120 60% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 146 40% 8%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 120 60% 50%;
+    --sidebar-primary-foreground: 146 40% 8%;
+    --sidebar-accent: 146 30% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 146 25% 25%;
+    --sidebar-ring: 120 60% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+/* Custom gradients for the green theme */
+@layer utilities {
+  .gradient-green {
+    background: linear-gradient(135deg, hsl(120 60% 50%) 0%, hsl(120 50% 45%) 100%);
+  }
+  
+  .gradient-green-dark {
+    background: linear-gradient(135deg, hsl(146 35% 12%) 0%, hsl(146 25% 20%) 100%);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(120 60% 50%) 0%, hsl(120 70% 60%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
